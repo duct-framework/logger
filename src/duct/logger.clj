@@ -10,7 +10,7 @@
   (-log [_ _ _ _ _ _ _]))
 
 (defn- log-form [logger level event data form]
-  `(p/-log ~logger ~level ~(str *ns*) ~*file* ~(:line (meta form)) ~event ~data))
+  `(-log ~logger ~level ~(str *ns*) ~*file* ~(:line (meta form)) ~event ~data))
 
 (defmacro log
   "Log an event and optional data structure at the supplied severity level
