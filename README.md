@@ -10,7 +10,7 @@ A logging library for the [Duct][] framework.
 
 To install, add the following to your project `:dependencies`:
 
-    [duct/logger "0.1.0"]
+    [duct/logger "0.1.1"]
 
 ## Usage
 
