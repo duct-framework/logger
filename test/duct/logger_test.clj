@@ -1,7 +1,8 @@
 (ns duct.logger-test
-  (:require [clojure.test :refer :all]
-            [duct.logger :refer :all]))
+  (:require [clojure.string :as str]
+            [clojure.test :refer :all]
+            [duct.logger :as logger]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest nil-test
+  (is (str/blank? (with-out-str (logger/log nil :info ::testing))))
+  (is (str/blank? (with-out-str (logger/log nil :info ::testing {:foo "bar"})))))
