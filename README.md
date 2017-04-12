@@ -41,6 +41,10 @@ The use of keywords and data structures produces logs that can be
 queried more efficiently and consistantly than logs written in
 English.
 
+## Documentation
+
+* [API Docs](https://duct-framework.github.io/logger/duct.logger.html)
+
 ## License
 
 Copyright © 2017 James Reeves
