@@ -1,5 +1,7 @@
 # Duct logger
 
+[![Build Status](https://travis-ci.org/duct-framework/logger.svg?branch=master)](https://travis-ci.org/duct-framework/logger)
+
 A logging library for the [Duct][] framework. 
 
 [duct]: https://github.com/duct-framework/duct
