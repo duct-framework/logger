@@ -1,4 +1,5 @@
-(ns duct.logger)
+(ns duct.logger
+  "Protocol and macro for logging events in Duct.")
 
 (defprotocol Logger
   "Protocol for abstracting logging. Used by the log macro."
