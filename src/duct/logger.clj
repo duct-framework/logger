@@ -21,8 +21,3 @@
   using a logger that implements the Logger protocol."
   ([logger level event]      (log-form logger level event nil &form))
   ([logger level event data] (log-form logger level event data &form)))
-
-(def logger
-  (reify Logger
-    (-log [_  level ns-str file line id event data]
-      [level ns-str file line id event data])))
