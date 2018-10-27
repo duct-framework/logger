@@ -24,3 +24,21 @@
             [:warn "duct.logger-test" "duct/logger_test.clj" 21 ::t2 {:x "y"}]]))
     (is (= (count @ids) (count (distinct @ids))))
     (is (every? (partial instance? java.util.UUID) @ids))))
+
+(deftest sugar-test
+  (let [logs   (atom [])
+        ids    (atom [])
+        logger (->AtomLogger logs ids)]
+    (logger/report logger ::t1)
+    (logger/fatal logger ::t2)
+    (logger/error logger ::t3)
+    (logger/warn logger ::t4)
+    (logger/info logger ::t5)
+    (logger/debug logger ::t6)
+    (is (= @logs
+           [[:report "duct.logger-test" "duct/logger_test.clj" 32 ::t1 nil]
+            [:fatal  "duct.logger-test" "duct/logger_test.clj" 33 ::t2 nil]
+            [:error  "duct.logger-test" "duct/logger_test.clj" 34 ::t3 nil]
+            [:warn   "duct.logger-test" "duct/logger_test.clj" 35 ::t4 nil]
+            [:info   "duct.logger-test" "duct/logger_test.clj" 36 ::t5 nil]
+            [:debug  "duct.logger-test" "duct/logger_test.clj" 37 ::t6 nil]]))))

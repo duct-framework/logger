@@ -21,3 +21,12 @@
   using a logger that implements the Logger protocol."
   ([logger level event]      (log-form logger level event nil &form))
   ([logger level event data] (log-form logger level event data &form)))
+
+(doseq [level '(report fatal error warn info debug)]
+  (eval
+   `(defmacro ~level
+      ~(format "Log an event with %s logging level. See [[log]]." level)
+      (~'[logger event]
+       (log-form ~'logger ~(keyword level) ~'event nil ~'&form))
+      (~'[logger event data]
+       (log-form ~'logger ~(keyword level) ~'event ~'data ~'&form)))))
