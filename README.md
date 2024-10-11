@@ -1,8 +1,6 @@
-# Duct logger
+# Duct Logger [![Build Status](https://github.com/duct-framework/logger/actions/workflows/test.yml/badge.svg)](https://github.com/duct-framework/logger/actions/workflows/test.yml)
 
-[![Build Status](https://travis-ci.org/duct-framework/logger.svg?branch=master)](https://travis-ci.org/duct-framework/logger)
-
-A logging library for the [Duct][] framework. 
+A logging library for the [Duct][] framework.
 
 [duct]: https://github.com/duct-framework/duct
 
