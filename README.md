@@ -6,9 +6,14 @@ A logging library for the [Duct][] framework.
 
 ## Installation
 
-To install, add the following to your project `:dependencies`:
+Add the following dependency to your deps.edn file:
 
-    [duct/logger "0.3.0"]
+    org.duct-framework/logger {:mvn/version "0.3.0"}
+
+Or to your Leiningen project file:
+
+    [org.duct-framework/logger "0.3.0"]
+
 
 ## Usage
 
