@@ -8,11 +8,11 @@ A logging library for the [Duct][] framework.
 
 Add the following dependency to your deps.edn file:
 
-    org.duct-framework/logger {:mvn/version "0.3.0"}
+    org.duct-framework/logger {:mvn/version "0.4.0"}
 
 Or to your Leiningen project file:
 
-    [org.duct-framework/logger "0.3.0"]
+    [org.duct-framework/logger "0.4.0"]
 
 ## Usage
 
