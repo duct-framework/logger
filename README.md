@@ -20,7 +20,7 @@ To use this library, you'll need an implementation of the
 `duct.logger/Logger` protocol. You can implement this yourself, or
 use a pre-written one, such as [logger.simple][].
 
-[logger.timbre]: https://github.com/duct-framework/logger.simple
+[logger.simple]: https://github.com/duct-framework/logger.simple
 
 Once you have a logger, you can use the `duct.logger/log`
 macro. Logging in Duct is data-driven, and has three parts:
