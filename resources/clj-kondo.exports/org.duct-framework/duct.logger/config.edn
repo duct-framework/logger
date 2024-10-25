@@ -1,0 +1,7 @@
+{:linters
+ {:unresolved-var {:exclude [duct.logger/report
+                             duct.logger/fatal
+                             duct.logger/error
+                             duct.logger/warn
+                             duct.logger/info
+                             duct.logger/debug]}}}

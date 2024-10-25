@@ -1,6 +1,6 @@
 (ns duct.logger-test
   (:require [clojure.string :as str]
-            [clojure.test :refer :all]
+            [clojure.test :refer [deftest is]]
             [duct.logger :as logger]))
 
 (deftest nil-test
@@ -9,7 +9,7 @@
 
 (defrecord AtomLogger [a ids]
   logger/Logger
-  (-log [logger level ns-str file line id event data]
+  (-log [_ level ns-str file line id event data]
     (swap! a conj [level ns-str file line event data])
     (swap! ids conj (force id))))
 
