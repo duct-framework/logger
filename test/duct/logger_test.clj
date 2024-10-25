@@ -42,3 +42,15 @@
             [:warn   "duct.logger-test" "duct/logger_test.clj" 35 ::t4 nil]
             [:info   "duct.logger-test" "duct/logger_test.clj" 36 ::t5 nil]
             [:debug  "duct.logger-test" "duct/logger_test.clj" 37 ::t6 nil]]))))
+
+(deftest multi-logger-test
+  (let [logs    (atom [])
+        ids     (atom [])
+        loggers [(->AtomLogger logs ids) (->AtomLogger logs ids)]]
+    (logger/log loggers :info ::t1)
+    (logger/log loggers :warn ::t2 {:x "y"})
+    (is (= @logs
+           [[:info "duct.logger-test" "duct/logger_test.clj" 50 ::t1 nil]
+            [:info "duct.logger-test" "duct/logger_test.clj" 50 ::t1 nil]
+            [:warn "duct.logger-test" "duct/logger_test.clj" 51 ::t2 {:x "y"}]
+            [:warn "duct.logger-test" "duct/logger_test.clj" 51 ::t2 {:x "y"}]]))))

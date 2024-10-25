@@ -7,7 +7,10 @@
 
 (extend-protocol Logger
   nil
-  (-log [_ _ _ _ _ _ _ _]))
+  (-log [_ _ _ _ _ _ _ _])
+  java.util.Collection
+  (-log [loggers level ns-str file line id event data]
+    (run! #(-log % level ns-str file line id event data) loggers)))
 
 (defn- log-form [logger level event data form]
   `(-log ~logger
